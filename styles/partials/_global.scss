@@ -1,16 +1,48 @@
 @use "./variables";
+@use "./mixin";
 
 * {
   margin: 0;
   box-sizing: border-box;
 }
 
+@function set-text-color($colour) {
+  @if (lightness($color) > 40) {
+    @return variables.$primary-black;
+  } @else {
+    @return variables.$primary-white;
+  }
+}
+
 body {
   font-family: "Avenir", serif;
-  color: variables.$primary-black;
+  background-color: variables.$primary-black;
+  color: variables.$primary-white;
+  // color: set-text-color(variables.$primary-black);
+}
+
+li {
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: variables.$primary-silver;
+  margin: variables.$pm-base;
+
+  &:hover {
+    cursor: pointer;
+    color: variables.$primary-blue;
+    @include mixin.easeOut;
+  }
+  @include mixin.desktop {
+    height: 2rem;
+    width: 2rem;
+  }
 }

@@ -1,10 +1,14 @@
-$primary-black: #424242;
+$primary-black: #2b2b2b;
 $primary-silver: #afafaf;
 $primary-blue: rgb(92, 174, 252);
 $primary-white: #ffffff;
-$secondary-blue: rgba(223, 237, 248, 0.87);
+$secondary-blue: rgb(211, 241, 250);
 
 $desktop: 80rem;
 $tablet: 48rem;
 
 $pm-base: 0.25rem; //   mobile min 4; tablet min 9
+
+$show-home-image: true;
+$background-opacity: 0.9;
+$home-image: url("../../assets/images/bg.jpeg");
