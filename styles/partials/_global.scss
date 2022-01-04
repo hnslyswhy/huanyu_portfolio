@@ -1,12 +1,7 @@
 @use "./variables";
 @use "./mixin";
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-@function set-text-color($colour) {
+@function set-text-color($color) {
   @if (lightness($color) > 40) {
     @return variables.$primary-black;
   } @else {
@@ -14,11 +9,15 @@
   }
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Avenir", serif;
-  background-color: variables.$primary-black;
-  color: variables.$primary-white;
-  // color: set-text-color(variables.$primary-black);
+  background-color: variables.$secondary-silver;
+  color: set-text-color(variables.$primary-black);
 }
 
 li {
@@ -44,43 +43,5 @@ svg {
   @include mixin.desktop {
     height: 2rem;
     width: 2rem;
-  }
-}
-
-.footer {
-  width: 100%;
-  // position: absolute;
-  //bottom: 0;
-  // left: 0;
-  padding: variables.$pm-base * 4;
-  height: 3.125rem;
-  background: rgba(
-    lighten($color: variables.$secondary-black, $amount: 2),
-    0.5
-  );
-  @include mixin.flexbox(row, space-between, center);
-  @include mixin.tablet {
-    padding: variables.$pm-base * 9;
-  }
-
-  &__brand {
-    color: variables.$primary-silver;
-  }
-
-  &__CV {
-    color: variables.$primary-silver;
-    &:hover {
-      cursor: pointer;
-      color: variables.$primary-blue;
-      @include mixin.easeOut;
-    }
-  }
-
-  &__items {
-    width: 40%;
-    @include mixin.flexbox(row, space-around, center);
-    @include mixin.tablet {
-      width: 30%;
-    }
   }
 }

@@ -15,10 +15,10 @@
   transition: all 0.5s ease-out;
 }
 
-@mixin heroBackground {
+@mixin planeBackground {
   @if variables.$show-home-image {
     &.container {
-      background-image: variables.$home-image;
+      background-image: variables.$plane-image;
       background-repeat: no-repeat;
       background-size: cover;
       /*   &::after {
@@ -38,13 +38,16 @@
   }
 }
 
-@function set-text-color($colour) {
-  @if (lightness($color) > 40) {
-    @return variables.$primary-black;
-  } @else {
-    @return variables.$primary-white;
+@mixin cloudBackground {
+  @if variables.$show-home-image {
+    &.container {
+      background-image: variables.$cloud-image;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 }
+
 // font for desktop and tablet
 
 @mixin header {

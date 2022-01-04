@@ -5,7 +5,7 @@
 
 body {
   font-family: "Avenir", serif;
-  background-color: #2b2b2b;
+  background-color: #f4ebeb;
   color: #ffffff;
 }
 
@@ -36,60 +36,37 @@ svg:hover {
   }
 }
 
-.footer {
-  width: 100%;
-  padding: 1rem;
-  height: 3.125rem;
-  background: rgba(5, 5, 5, 0.5);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (min-width: 48rem) {
-  .footer {
-    padding: 2.25rem;
-  }
-}
-.footer__brand {
-  color: #afafaf;
-}
-.footer__CV {
-  color: #afafaf;
-}
-.footer__CV:hover {
-  cursor: pointer;
-  color: #5caefc;
-  transition: all 0.5s ease-out;
-}
-.footer__items {
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-@media (min-width: 48rem) {
-  .footer__items {
-    width: 30%;
-  }
-}
-
 .container {
   width: 100%;
-  height: 100vh;
   position: relative;
-  background-image: linear-gradient(to right, #141e30, #243b55);
+}
+.container.container {
+  background-image: url("../../assets/images/plane.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*   &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(
+      variables.$primary-black,
+      variables.$background-opacity
+    );
+  } */
 }
 
 .header {
   width: 100%;
-  height: 3.125rem;
+  height: 3rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  background: rgba(5, 5, 5, 0.5);
+  background: rgba(10, 10, 10, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -192,13 +169,14 @@ svg:hover {
   }
 }
 .project__card {
-  width: 100%;
+  width: 90%;
   padding-bottom: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 8px rgba(180, 232, 248, 0.482);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: rgba(5, 5, 5, 0.5);
+  background: rgba(13, 13, 13, 0.5);
   border-bottom: 3px solid #5caefc;
+  color: #afafaf;
   margin: 1.5rem 0;
 }
 @media (min-width: 48rem) {
@@ -213,8 +191,9 @@ svg:hover {
 }
 .project__card:hover {
   cursor: pointer;
-  background: #383838;
-  border-bottom: 3px solid #d3f1fa;
+  background-color: #5caefc;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
   position: relative;
   top: 1px;
   transition: all 0.5s ease-out;
@@ -243,7 +222,6 @@ svg:hover {
   }
 }
 .project__intro {
-  color: #afafaf;
   font-weight: 400;
   line-height: 1.2rem;
   font-size: 0.813rem;
@@ -256,7 +234,6 @@ svg:hover {
   }
 }
 .project__description {
-  color: #afafaf;
   font-weight: 600;
   line-height: 1.375rem;
   font-size: 1rem;
@@ -268,5 +245,44 @@ svg:hover {
     line-height: 1.8rem;
     font-size: 1rem;
     font-weight: 700;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem;
+  height: 3.125rem;
+  background: rgba(10, 10, 10, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .footer {
+    padding: 2.25rem;
+  }
+}
+.footer__brand {
+  color: #afafaf;
+}
+.footer__CV {
+  color: #afafaf;
+}
+.footer__CV:hover {
+  cursor: pointer;
+  color: #5caefc;
+  transition: all 0.5s ease-out;
+}
+.footer__items {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .footer__items {
+    width: 30%;
   }
 }/*# sourceMappingURL=projects.css.map */

@@ -4,22 +4,22 @@
 
 .container {
   width: 100%;
-  height: 100vh;
   position: relative;
-  //background-image: linear-gradient(to right, #434343 0%, black 100%);
+  @include mixin.planeBackground;
+  // background-image: linear-gradient(to left, #434343 0%, black 100%);
   //  background-image: linear-gradient(109.6deg, rgba(156, 252, 248, 1) 11.2%, rgba(110, 123, 251, 1) 91.1%);
-  background-image: linear-gradient(to right, #141e30, #243b55);
+  //background-image: linear-gradient(to right, #141e30, #243b55);
 }
 
 .header {
   width: 100%;
-  height: 3.125rem;
+  height: 3rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
   background: rgba(
-    lighten($color: variables.$secondary-black, $amount: 2),
+    lighten($color: variables.$secondary-black, $amount: 4),
     0.5
   );
   @include mixin.flexbox(row, space-between, center);
@@ -87,16 +87,17 @@
   }
 
   &__card {
-    width: 100%;
+    width: 90%;
     padding-bottom: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 8px rgba(180, 232, 248, 0.482);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background: rgba(
-      lighten($color: variables.$secondary-black, $amount: 2),
+      lighten($color: variables.$secondary-black, $amount: 5),
       0.5
     );
     border-bottom: 3px solid variables.$primary-blue;
+    color: variables.$primary-silver;
     margin: variables.$pm-base * 6 0;
     @include mixin.tablet {
       width: 48%;
@@ -107,8 +108,9 @@
 
     &:hover {
       cursor: pointer;
-      background: lighten($color: variables.$primary-black, $amount: 5);
-      border-bottom: 3px solid variables.$secondary-blue;
+      background-color: variables.$primary-blue;
+      color: variables.$primary-white;
+      border-bottom: 3px solid variables.$primary-white;
       position: relative;
       top: 1px;
       @include mixin.easeOut;
@@ -135,7 +137,7 @@
   }
 
   &__intro {
-    color: variables.$primary-silver;
+    //    color: variables.$primary-silver;
     @include mixin.mobil-text;
     @include mixin.desktop {
       @include mixin.text;
@@ -143,11 +145,49 @@
   }
 
   &__description {
-    color: variables.$primary-silver;
+    //  color: variables.$primary-silver;
     @include mixin.mobil-subheader;
     @include mixin.desktop {
       @include mixin.text;
       font-weight: 700;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  // position: absolute;
+  //bottom: 0;
+  // left: 0;
+  padding: variables.$pm-base * 4;
+  height: 3.125rem;
+  background: rgba(
+    lighten($color: variables.$secondary-black, $amount: 4),
+    0.5
+  );
+  @include mixin.flexbox(row, space-between, center);
+  @include mixin.tablet {
+    padding: variables.$pm-base * 9;
+  }
+
+  &__brand {
+    color: variables.$primary-silver;
+  }
+
+  &__CV {
+    color: variables.$primary-silver;
+    &:hover {
+      cursor: pointer;
+      color: variables.$primary-blue;
+      @include mixin.easeOut;
+    }
+  }
+
+  &__items {
+    width: 40%;
+    @include mixin.flexbox(row, space-around, center);
+    @include mixin.tablet {
+      width: 30%;
     }
   }
 }
