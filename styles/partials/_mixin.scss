@@ -17,12 +17,11 @@
 
 @mixin heroBackground {
   @if variables.$show-home-image {
-    &.about {
+    &.container {
       background-image: variables.$home-image;
       background-repeat: no-repeat;
       background-size: cover;
-
-      &::after {
+      /*   &::after {
         content: "";
         position: absolute;
         top: 0;
@@ -31,10 +30,10 @@
         height: 100%;
         z-index: -1;
         background-color: rgba(
-          variables.$primary-silver,
+          variables.$primary-black,
           variables.$background-opacity
         );
-      }
+      } */
     }
   }
 }

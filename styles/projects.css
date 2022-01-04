@@ -36,6 +36,52 @@ svg:hover {
   }
 }
 
+.footer {
+  width: 100%;
+  padding: 1rem;
+  height: 3.125rem;
+  background: rgba(5, 5, 5, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .footer {
+    padding: 2.25rem;
+  }
+}
+.footer__brand {
+  color: #afafaf;
+}
+.footer__CV {
+  color: #afafaf;
+}
+.footer__CV:hover {
+  cursor: pointer;
+  color: #5caefc;
+  transition: all 0.5s ease-out;
+}
+.footer__items {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .footer__items {
+    width: 30%;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(to right, #141e30, #243b55);
+}
+
 .header {
   width: 100%;
   height: 3.125rem;
@@ -43,7 +89,7 @@ svg:hover {
   top: 0;
   left: 0;
   z-index: 2;
-  background: rgba(48, 48, 48, 0.5);
+  background: rgba(5, 5, 5, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -106,12 +152,13 @@ svg:hover {
 .projects {
   width: 100%;
   padding: 1rem;
-  padding-top: 20vh;
+  padding-top: 15%;
+  margin-bottom: 5%;
 }
 @media (min-width: 48rem) {
   .projects {
     padding: 2.25rem;
-    padding-top: 10vh;
+    padding-top: 10%;
   }
 }
 .projects__title {
@@ -150,7 +197,7 @@ svg:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background: rgba(48, 48, 48, 0.5);
+  background: rgba(5, 5, 5, 0.5);
   border-bottom: 3px solid #5caefc;
   margin: 1.5rem 0;
 }
@@ -167,6 +214,7 @@ svg:hover {
 .project__card:hover {
   cursor: pointer;
   background: #383838;
+  border-bottom: 3px solid #d3f1fa;
   position: relative;
   top: 1px;
   transition: all 0.5s ease-out;
@@ -220,44 +268,5 @@ svg:hover {
     line-height: 1.8rem;
     font-size: 1rem;
     font-weight: 700;
-  }
-}
-
-.footer {
-  width: 100%;
-  padding: 1rem;
-  height: 3.125rem;
-  background: rgba(48, 48, 48, 0.5);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (min-width: 48rem) {
-  .footer {
-    padding: 2.25rem;
-  }
-}
-.footer__brand {
-  color: #afafaf;
-}
-.footer__CV {
-  color: #afafaf;
-}
-.footer__CV:hover {
-  cursor: pointer;
-  color: #5caefc;
-  transition: all 0.5s ease-out;
-}
-.footer__items {
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-@media (min-width: 48rem) {
-  .footer__items {
-    width: 30%;
   }
 }/*# sourceMappingURL=projects.css.map */

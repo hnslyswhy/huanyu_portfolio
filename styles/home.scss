@@ -2,6 +2,12 @@
 @use "./partials/variables";
 @use "./partials/global";
 
+.container {
+  width: 100%;
+  height: 100vh;
+  @include mixin.heroBackground;
+}
+
 .header {
   width: 100%;
   height: 3.125rem;
@@ -19,7 +25,7 @@
 }
 
 .nav {
-  width: 50%;
+  width: 55%;
   @include mixin.tablet {
     width: 30%;
   }
@@ -50,18 +56,17 @@
 
 .about {
   width: 100%;
-  height: 100vh;
-  padding-top: 20vh;
+  // height: 100vh;
+  margin-top: 18%;
   @include mixin.flexbox(column, center, center);
-  @include mixin.heroBackground;
   padding: variables.$pm-base * 4;
   @include mixin.tablet {
     padding: variables.$pm-base * 9;
-    padding-top: 8vh;
+    margin-top: 10%;
   }
   @include mixin.desktop {
     padding: variables.$pm-base * 21 variables.$pm-base * 9;
-    padding-top: 5vh;
+    margin-top: 5%;
   }
 
   &__headlines {
@@ -89,14 +94,14 @@
   }
 
   &__intro {
-    margin-top: variables.$pm-base * 4;
-    padding: variables.$pm-base * 8 variables.$pm-base * 4;
+    padding: variables.$pm-base * 6 variables.$pm-base * 4;
     background: rgba(
       lighten($color: variables.$primary-black, $amount: 2),
       0.5
     );
     @include mixin.mobil-text;
     @include mixin.tablet {
+      margin-top: variables.$pm-base * 4;
       @include mixin.tablet-text;
     }
     @include mixin.desktop {
@@ -108,4 +113,10 @@
 .secondary-color {
   color: variables.$primary-blue;
   font-size: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
