@@ -15,12 +15,13 @@
   transition: all 0.5s ease-out;
 }
 
-@mixin planeBackground {
+@mixin darkBackground {
   @if variables.$show-home-image {
     &.container {
-      background-image: variables.$plane-image;
+      background-image: variables.$dark-image;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       /*   &::after {
         content: "";
         position: absolute;

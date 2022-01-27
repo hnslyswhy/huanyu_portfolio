@@ -4,10 +4,8 @@
 
 .container {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
   position: relative;
-  @include mixin.planeBackground;
+  @include mixin.darkBackground;
 }
 
 .cloud {
@@ -16,12 +14,11 @@
 
 .header {
   width: 100%;
-  height: 3rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: rgba(lighten($color: variables.$primary-black, $amount: 2), 0.5);
+  height: 4rem;
+  background: rgba(
+    lighten($color: variables.$secondary-black, $amount: 4),
+    0.8
+  );
   @include mixin.flexbox(row, space-between, center);
   color: variables.$primary-silver;
   padding: variables.$pm-base * 4;
@@ -30,56 +27,16 @@
   }
 }
 
-/* .light-blue {
-  background: rgba(
-    lighten($color: variables.$secondary-dark-blue, $amount: 2),
-    0.9
-  );
-} */
-
-.nav {
-  width: 55%;
-  @include mixin.tablet {
-    width: 30%;
-  }
-  @include mixin.desktop {
-    width: 20%;
-  }
-
-  &__items {
-    width: 100%;
-    @include mixin.flexbox(row, space-between, center);
-  }
-
-  &__item {
-    @include mixin.mobil-subheader;
-    @include mixin.tablet {
-      @include mixin.tablet-subheader;
-    }
-    @include mixin.desktop {
-      @include mixin.subheader;
-    }
-    &:hover {
-      cursor: pointer;
-      color: variables.$primary-blue;
-      @include mixin.easeOut;
-    }
-  }
-}
-
 .about {
   width: 100%;
-  // height: 100vh;
-  margin-top: 18%;
+  margin-top: 2rem;
   @include mixin.flexbox(column, center, center);
-  padding: variables.$pm-base * 4;
+  padding: 1rem;
   @include mixin.tablet {
-    padding: variables.$pm-base * 9;
-    margin-top: 10%;
+    padding: 2rem;
   }
   @include mixin.desktop {
-    padding: variables.$pm-base * 21 variables.$pm-base * 9;
-    margin-top: 5%;
+    padding: 5rem;
   }
 
   &__headlines {
@@ -94,31 +51,34 @@
     @include mixin.desktop {
       @include mixin.header;
     }
-    margin-bottom: variables.$pm-base * 4;
+    margin-bottom: 2rem;
   }
 
   &__brief {
-    margin-left: variables.$pm-base * 12;
+    margin-left: 2rem;
     @include mixin.mobil-subheader;
     @include mixin.tablet {
       @include mixin.tablet-header;
     }
-    margin-bottom: variables.$pm-base * 4;
+    margin-bottom: 2rem;
   }
 
   &__intro {
-    padding: variables.$pm-base * 4;
+    padding: 1rem;
     background: rgba(
       lighten($color: variables.$primary-black, $amount: 2),
       0.5
     );
     @include mixin.mobil-text;
+
     @include mixin.tablet {
-      margin-top: variables.$pm-base * 4;
+      margin-top: 1rem;
       @include mixin.tablet-text;
+      padding: 2rem;
     }
     @include mixin.desktop {
       @include mixin.text;
+      padding: 2rem 3rem;
     }
   }
 }
@@ -128,29 +88,16 @@
   font-size: inherit;
 }
 
-.copyright {
-  position: fixed;
-  bottom: 0%;
-  right: 0%;
-  width: 100%;
-  @include mixin.flexbox(row, center, center);
-  background: rgba(lighten($color: variables.$primary-black, $amount: 2), 0.5);
-  padding: variables.$pm-base * 2 0;
-}
-
 ///
 
 .theme-toggle-button {
-  background-color: inherit;
-  color: inherit;
+  background-color: white;
+  color: white;
   @include mixin.flexbox(row, center, center);
   cursor: pointer;
   padding: 0.7em;
   border: transparent;
   border-radius: 50%;
-  position: absolute;
-  top: -2px;
-  right: 10px;
 }
 
 .theme-toggle-button:hover {
@@ -162,4 +109,148 @@
 
 .toggle-icon {
   color: variables.$primary-black;
+}
+
+.project {
+  width: 100%;
+  padding: 2rem 0;
+  padding: variables.$pm-base * 4 0;
+  margin: auto;
+  @include mixin.flexbox(column, flex-start, center);
+
+  &__title {
+    margin-right: auto;
+    margin-top: 2rem;
+    @include mixin.mobil-subheader;
+    @include mixin.tablet {
+      margin-top: 4rem;
+      @include mixin.tablet-header;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-radius: 4px;
+    @include mixin.flexbox(column, flex-start, center);
+
+    &:nth-of-type(2n) {
+      background: rgba(
+        lighten($color: variables.$primary-black, $amount: 2),
+        0.5
+      );
+    }
+
+    @include mixin.tablet {
+      @include mixin.flexbox(row, space-between, center);
+    }
+  }
+
+  &__video-container {
+    width: 100%;
+    height: 47vw;
+    margin: auto;
+    margin-top: 2rem;
+
+    @include mixin.tablet {
+      width: 50%;
+      height: 40vh;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__info {
+    width: 100%;
+    margin: auto;
+    padding: 1rem 0;
+    @include mixin.flexbox(column, center, center);
+
+    @include mixin.tablet {
+      width: 35%;
+    }
+  }
+
+  &__name {
+    text-align: center;
+    margin-bottom: 1rem;
+    @include mixin.mobil-subheader;
+    @include mixin.tablet {
+      @include mixin.subheader;
+    }
+  }
+
+  &__intro,
+  &__type {
+    @include mixin.mobil-text;
+    margin-bottom: 0.5rem;
+    @include mixin.text;
+  }
+
+  &__description {
+    @include mixin.mobil-text;
+    text-align: center;
+    font-weight: 600;
+    @include mixin.tablet {
+      @include mixin.text;
+    }
+  }
+
+  &__reverse {
+    order: -2;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(lighten($color: variables.$secondary-black, $amount: 4), 1);
+  @include mixin.flexbox(column, flex-start, center);
+  @include mixin.tablet {
+    @include mixin.flexbox(row, space-between, center);
+  }
+
+  &__brand {
+    color: variables.$primary-silver;
+    @include mixin.tablet {
+      width: 30%;
+      margin-left: 2rem;
+    }
+  }
+
+  &__items {
+    margin-top: 0.5rem;
+    @include mixin.flexbox(row, center, center);
+    @include mixin.tablet {
+      width: 30%;
+    }
+  }
+
+  &__icon {
+    margin: 0 0.5rem;
+  }
+
+  &__CV {
+    margin: 0 0.5rem;
+    color: variables.$primary-silver;
+    @include mixin.mobil-text;
+    padding: 0.2rem;
+    font-weight: 600;
+    border: 1px solid variables.$primary-silver;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+      color: variables.$primary-blue;
+      @include mixin.easeOut;
+    }
+
+    @include mixin.tablet {
+      padding: 0.4rem;
+    }
+  }
 }
