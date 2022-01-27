@@ -16,8 +16,8 @@
 
 body {
   font-family: "Avenir", serif;
-  background-color: variables.$secondary-silver;
-  color: set-text-color(variables.$primary-black);
+  background-color: variables.$primary-silver;
+  color: set-text-color(variables.$primary-white);
 }
 
 li {
@@ -27,21 +27,4 @@ li {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-svg {
-  height: 1.5rem;
-  width: 1.5rem;
-  color: variables.$primary-silver;
-  margin: variables.$pm-base;
-
-  &:hover {
-    cursor: pointer;
-    color: variables.$primary-blue;
-    @include mixin.easeOut;
-  }
-  @include mixin.desktop {
-    height: 2rem;
-    width: 2rem;
-  }
 }

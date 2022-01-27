@@ -5,8 +5,8 @@
 
 body {
   font-family: "Avenir", serif;
-  background-color: #f4ebeb;
-  color: #ffffff;
+  background-color: #fbfcfc;
+  color: #353535;
 }
 
 li {
@@ -18,79 +18,42 @@ a {
   color: inherit;
 }
 
-svg {
-  height: 1.5rem;
-  width: 1.5rem;
-  color: #afafaf;
-  margin: 0.25rem;
-}
-svg:hover {
-  cursor: pointer;
-  color: #5caefc;
-  transition: all 0.5s ease-out;
-}
-@media (min-width: 80rem) {
-  svg {
-    height: 2rem;
-    width: 2rem;
-  }
-}
-
 .container {
   width: 100%;
   position: relative;
 }
-.container.container {
-  background-image: url("../../assets/images/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  /*   &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: rgba(
-      variables.$primary-black,
-      variables.$background-opacity
-    );
-  } */
-}
-
-.cloud.container {
-  background-image: url("../../assets/images/cloud.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .header {
   width: 100%;
-  height: 4rem;
-  background: rgba(10, 10, 10, 0.8);
+  background-color: #6cb4ee;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: #afafaf;
   padding: 1rem;
 }
 @media (min-width: 48rem) {
   .header {
-    padding: 2.25rem;
+    padding: 2rem;
   }
+}
+.header__brand {
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  z-index: 1;
 }
 
 .about {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
 }
 @media (min-width: 48rem) {
   .about {
@@ -99,7 +62,7 @@ svg:hover {
 }
 @media (min-width: 80rem) {
   .about {
-    padding: 5rem;
+    padding: 2rem 4rem;
   }
 }
 .about__headlines {
@@ -142,8 +105,10 @@ svg:hover {
   }
 }
 .about__intro {
-  padding: 1rem;
-  background: rgba(58, 58, 58, 0.5);
+  padding: 2rem 1rem;
+  background-color: #6699cc;
+  border-radius: 4px;
+  color: #ffffff;
   font-weight: 400;
   line-height: 1.2rem;
   font-size: 0.813rem;
@@ -160,39 +125,10 @@ svg:hover {
 @media (min-width: 80rem) {
   .about__intro {
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 2rem;
     font-size: 1rem;
-    padding: 2rem 3rem;
+    padding: 4rem 3rem;
   }
-}
-
-.secondary-color {
-  color: #5caefc;
-  font-size: inherit;
-}
-
-.theme-toggle-button {
-  background-color: white;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  padding: 0.7em;
-  border: transparent;
-  border-radius: 50%;
-}
-
-.theme-toggle-button:hover {
-  border: 1px solid #5caefc;
-  box-shadow: 0 2px 8px rgba(180, 232, 248, 0.482);
-  transform: scale(1.1);
-  transition: all 0.5s ease-out;
-}
-
-.toggle-icon {
-  color: #353535;
 }
 
 .project {
@@ -208,10 +144,10 @@ svg:hover {
 .project__title {
   margin-right: auto;
   margin-top: 2rem;
-  font-weight: 600;
-  line-height: 1.375rem;
-  font-size: 1rem;
-  letter-spacing: 0.01rem;
+  font-weight: 700;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
 }
 @media (min-width: 48rem) {
   .project__title {
@@ -223,8 +159,8 @@ svg:hover {
 }
 .project__container {
   width: 100%;
-  margin-top: 2rem;
-  padding: 2rem 0;
+  margin-top: 4rem;
+  padding-top: 2rem;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -232,10 +168,11 @@ svg:hover {
   align-items: center;
 }
 .project__container:nth-of-type(2n) {
-  background: rgba(58, 58, 58, 0.5);
+  background-color: #6699cc;
 }
 @media (min-width: 48rem) {
   .project__container {
+    padding: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -244,19 +181,24 @@ svg:hover {
 }
 .project__video-container {
   width: 100%;
-  height: 47vw;
-  margin: auto;
-  margin-top: 2rem;
+  height: 100%;
 }
 @media (min-width: 48rem) {
   .project__video-container {
     width: 50%;
-    height: 40vh;
+    height: 100%;
   }
 }
 .project__video {
   width: 100%;
   height: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+@media (min-width: 48rem) {
+  .project__video {
+    border-radius: 4px;
+  }
 }
 .project__info {
   width: 100%;
@@ -273,6 +215,7 @@ svg:hover {
   }
 }
 .project__name {
+  color: inherit;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -293,7 +236,7 @@ svg:hover {
   font-size: 0.813rem;
   margin-bottom: 0.5rem;
   font-weight: 400;
-  line-height: 1.8rem;
+  line-height: 2rem;
   font-size: 1rem;
 }
 .project__description {
@@ -306,38 +249,64 @@ svg:hover {
 @media (min-width: 48rem) {
   .project__description {
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 2rem;
     font-size: 1rem;
   }
 }
 .project__reverse {
-  order: -2;
+  order: 1;
+}
+@media (min-width: 48rem) {
+  .project__reverse {
+    order: -1;
+  }
+}
+.project__reorder {
+  order: -1;
+}
+@media (min-width: 48rem) {
+  .project__reorder {
+    order: 1;
+  }
+}
+.project__white {
+  color: #ffffff;
 }
 
 .footer {
+  margin-top: 8rem;
+  position: relative;
   width: 100%;
-  padding: 1rem 2rem;
-  background: #0a0a0a;
+  padding: 1rem;
+  padding-bottom: 0.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 @media (min-width: 48rem) {
   .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 14rem;
+  }
+}
+@media (min-width: 80rem) {
+  .footer {
+    margin-top: 24rem;
   }
 }
 .footer__brand {
-  color: #afafaf;
+  color: #ffffff;
+  width: 40%;
+  font-weight: 400;
+  line-height: 1.2rem;
+  font-size: 0.813rem;
 }
 @media (min-width: 48rem) {
   .footer__brand {
-    width: 30%;
-    margin-left: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    font-size: 1rem;
   }
 }
 .footer__items {
@@ -352,27 +321,65 @@ svg:hover {
     width: 30%;
   }
 }
-.footer__icon {
+.footer__brand {
+  z-index: 2;
+}
+.footer__items {
+  z-index: 3;
+}
+.footer__icon-container {
   margin: 0 0.5rem;
+}
+.footer__icon {
+  width: 100%;
+  height: 1.5rem;
+  width: 1.5rem;
+  opacity: 0.8;
+  transition: all 0.5s ease-out;
+}
+.footer__icon:hover {
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1.2);
+}
+@media (min-width: 48rem) {
+  .footer__icon {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 .footer__CV {
   margin: 0 0.5rem;
-  color: #afafaf;
+  color: #ffffff;
   font-weight: 400;
   line-height: 1.2rem;
   font-size: 0.813rem;
   padding: 0.2rem;
   font-weight: 600;
-  border: 1px solid #afafaf;
+  border: 1px solid #ffffff;
   border-radius: 50%;
+  opacity: 0.8;
 }
 .footer__CV:hover {
   cursor: pointer;
-  color: #5caefc;
+  opacity: 1;
+  transform: scale(1.2);
   transition: all 0.5s ease-out;
 }
 @media (min-width: 48rem) {
   .footer__CV {
     padding: 0.4rem;
+  }
+}
+.footer__wave {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 48rem) {
+  .footer__wave {
+    bottom: -2rem;
   }
 }/*# sourceMappingURL=home.css.map */
